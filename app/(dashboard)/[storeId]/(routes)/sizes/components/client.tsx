@@ -24,14 +24,14 @@ export const SizesClient: React.FC<SizesClientProps> = ({
   return (
     <>
       <div className="flex items-center justify-between">
-        <Heading title={`Sizes (${data.length})`} description="Manage sizes for your products" />
+        <Heading title={`Jenis Properti (${data.length})`} description="Atur Jenis dari properti anda" />
         <Button onClick={() => router.push(`/${params.storeId}/sizes/new`)}>
-          <Plus className="mr-2 h-4 w-4" /> Add New
+          <Plus className="mr-2 h-4 w-4" /> Tambah Baru
         </Button>
       </div>
       <Separator />
       <DataTable searchKey="name" columns={columns} data={data} />
-      <Heading title="API" description="API Calls for Sizes" />
+      <Heading title="API" description="API Calls for Jenis Properti" />
       <Separator />
       <ApiList entityName="sizes" entityIdName="sizeId" />
     </>

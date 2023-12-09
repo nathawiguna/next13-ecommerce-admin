@@ -13,11 +13,7 @@ export function MainNav({
   const params = useParams();
 
   const routes = [
-    {
-      href: `/${params.storeId}`,
-      label: 'Overview',
-      active: pathname === `/${params.storeId}`,
-    },
+
     {
       href: `/${params.storeId}/billboards`,
       label: 'Billboards',
@@ -25,32 +21,32 @@ export function MainNav({
     },
     {
       href: `/${params.storeId}/categories`,
-      label: 'Categories',
+      label: 'Wilayah',
       active: pathname === `/${params.storeId}/categories`,
     },
     {
       href: `/${params.storeId}/sizes`,
-      label: 'Sizes',
+      label: 'Jenis Properti',
       active: pathname === `/${params.storeId}/sizes`,
     },
     {
       href: `/${params.storeId}/colors`,
-      label: 'Colors',
+      label: 'Status Properti',
       active: pathname === `/${params.storeId}/colors`,
     },
     {
       href: `/${params.storeId}/products`,
-      label: 'Products',
+      label: 'Properti',
       active: pathname === `/${params.storeId}/products`,
     },
     {
       href: `/${params.storeId}/orders`,
-      label: 'Orders',
+      label: 'Order Properti',
       active: pathname === `/${params.storeId}/orders`,
     },
     {
       href: `/${params.storeId}/settings`,
-      label: 'Settings',
+      label: 'Pengaturan',
       active: pathname === `/${params.storeId}/settings`,
     },
   ]

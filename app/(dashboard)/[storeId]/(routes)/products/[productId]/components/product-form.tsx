@@ -62,10 +62,10 @@ export const ProductForm: React.FC<ProductFormProps> = ({
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const title = initialData ? 'Edit product' : 'Create product';
-  const description = initialData ? 'Edit a product.' : 'Add a new product';
-  const toastMessage = initialData ? 'Product updated.' : 'Product created.';
-  const action = initialData ? 'Save changes' : 'Create';
+  const title = initialData ? 'Ubah Properti' : 'Buat Properti';
+  const description = initialData ? 'Ubah data properti menjadi benar.' : 'Tambahkan properti baru';
+  const toastMessage = initialData ? 'Properti sudah di update.' : 'Properti sudah ditambahkan.';
+  const action = initialData ? 'Simpan Perubahan' : 'Buat Baru';
 
   const defaultValues = initialData ? {
     ...initialData,
@@ -148,7 +148,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
             name="images"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Images</FormLabel>
+                <FormLabel>Gambar Properti</FormLabel>
                 <FormControl>
                   <ImageUpload 
                     value={field.value.map((image) => image.url)} 
@@ -180,9 +180,9 @@ export const ProductForm: React.FC<ProductFormProps> = ({
               name="price"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Price</FormLabel>
+                  <FormLabel>Harga</FormLabel>
                   <FormControl>
-                    <Input type="number" disabled={loading} placeholder="9.99" {...field} />
+                    <Input type="text" disabled={loading} placeholder="15000/Bulan atau 15.000" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -193,11 +193,11 @@ export const ProductForm: React.FC<ProductFormProps> = ({
               name="categoryId"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Category</FormLabel>
+                  <FormLabel>Wilayah</FormLabel>
                   <Select disabled={loading} onValueChange={field.onChange} value={field.value} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue defaultValue={field.value} placeholder="Select a category" />
+                        <SelectValue defaultValue={field.value} placeholder="Pilih Wilayah" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
@@ -215,11 +215,11 @@ export const ProductForm: React.FC<ProductFormProps> = ({
               name="sizeId"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Size</FormLabel>
+                  <FormLabel>Properti Yang Dijual</FormLabel>
                   <Select disabled={loading} onValueChange={field.onChange} value={field.value} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue defaultValue={field.value} placeholder="Select a size" />
+                        <SelectValue defaultValue={field.value} placeholder="Pilih Tanah atau Rumah" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
@@ -237,11 +237,11 @@ export const ProductForm: React.FC<ProductFormProps> = ({
               name="colorId"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Color</FormLabel>
+                  <FormLabel>Dijual Atau Disewakan</FormLabel>
                   <Select disabled={loading} onValueChange={field.onChange} value={field.value} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue defaultValue={field.value} placeholder="Select a color" />
+                        <SelectValue defaultValue={field.value} placeholder="Dijual Atau Disewakan" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
@@ -268,10 +268,10 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                   </FormControl>
                   <div className="space-y-1 leading-none">
                     <FormLabel>
-                      Featured
+                      Properti Utama
                     </FormLabel>
                     <FormDescription>
-                      This product will appear on the home page
+                      Produk ini akan tampil di halaman utama
                     </FormDescription>
                   </div>
                 </FormItem>
@@ -291,10 +291,10 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                   </FormControl>
                   <div className="space-y-1 leading-none">
                     <FormLabel>
-                      Archived
+                      Diarsipkan
                     </FormLabel>
                     <FormDescription>
-                      This product will not appear anywhere in the store.
+                      Produk ini tidak akan tampil di toko
                     </FormDescription>
                   </div>
                 </FormItem>

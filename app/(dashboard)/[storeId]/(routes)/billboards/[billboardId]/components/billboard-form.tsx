@@ -45,10 +45,10 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const title = initialData ? 'Edit billboard' : 'Create billboard';
-  const description = initialData ? 'Edit a billboard.' : 'Add a new billboard';
-  const toastMessage = initialData ? 'Billboard updated.' : 'Billboard created.';
-  const action = initialData ? 'Save changes' : 'Create';
+  const title = initialData ? 'Ubah Bilboard' : 'Tambahkan bilboard';
+  const description = initialData ? 'Ubah Bilboard Toko Anda.' : 'Tambahkan Bilboard Di Toko Anda';
+  const toastMessage = initialData ? 'Billboard telah diperbaharui.' : 'Billboard telah ditambahkan.';
+  const action = initialData ? 'Simpan Perubahan' : 'Tambahkan Billboard';
 
   const form = useForm<BillboardFormValues>({
     resolver: zodResolver(formSchema),
@@ -120,7 +120,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
               name="imageUrl"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Background image</FormLabel>
+                  <FormLabel>Gambar Latar Belakang</FormLabel>
                   <FormControl>
                     <ImageUpload 
                       value={field.value ? [field.value] : []} 
@@ -139,7 +139,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
               name="label"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Label</FormLabel>
+                  <FormLabel>Label Bilboard</FormLabel>
                   <FormControl>
                     <Input disabled={loading} placeholder="Billboard label" {...field} />
                   </FormControl>
